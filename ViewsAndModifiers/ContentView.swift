@@ -14,7 +14,7 @@ struct CapsuleText: View { //new struct called CapsuleText which is some knd of 
         Text(text)
             .font(.largeTitle)
             .padding()
-            .foregroundStyle(.white)
+            
             .background(.blue)
             .clipShape(.capsule)
     }
@@ -25,7 +25,9 @@ struct ContentView: View {
     var body: some View {
         VStack{
            CapsuleText(text: "Omolemo")
+                .foregroundStyle(.white)
             CapsuleText(text: "Mashigo")
+                .foregroundStyle(.red)
         }
     }
 }
