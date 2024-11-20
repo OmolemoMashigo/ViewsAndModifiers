@@ -7,28 +7,22 @@
 
 import SwiftUI
 
-struct CapsuleText: View { //new struct called CapsuleText which is some knd of View
-    var text: String
-    
-    var body: some View{
-        Text(text)
+struct Title: ViewModifier {
+    func body(content: Content) -> some View {
+        content
             .font(.largeTitle)
+            .foregroundStyle(.white)
             .padding()
-            
             .background(.blue)
-            .clipShape(.capsule)
+            .clipShape(.rect(cornerRadius: 10))
     }
 }
 
 struct ContentView: View {
     
     var body: some View {
-        VStack{
-           CapsuleText(text: "Omolemo")
-                .foregroundStyle(.white)
-            CapsuleText(text: "Mashigo")
-                .foregroundStyle(.red)
-        }
+        Text("Omolemo")
+            .modifier(Title())
     }
 }
 
